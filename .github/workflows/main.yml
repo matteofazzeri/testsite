@@ -17,7 +17,6 @@ jobs:
             password: ${{ secrets.SFTP_PRIVATE_KEY }}
             server: ${{ env.SERVER_URL }}
             port: ${{ secrets.FTP_PORT }}
-            local_path: './*'
             remote_path: '/chroot/home/S5163676/public_html'
             sftp_only: true
             
