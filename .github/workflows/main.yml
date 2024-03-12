@@ -18,6 +18,6 @@ jobs:
             server: ${{ env.SERVER_URL }}
             port: ${{ env.FTP_PORT }}
             local_path: './*'
-            remote_path: ${{ env.REMOTE_PATH }}
+            remote_path: '${{ env.REMOTE_PATH }}'
             sftp_only: true
             
