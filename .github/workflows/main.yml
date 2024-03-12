@@ -25,7 +25,7 @@ jobs:
         with:
           username: ${{ env.USERNAME }}
           server: ${{ env.SERVER_URL }}
-          port: ${{ env.SERVER_PORT }}
+          port: 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           # will put all file under this path
