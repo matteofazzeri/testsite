@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      main
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Deploy file
+          uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+          with:
+            username: ${{ env.USERNAME }}
+            password: ${{ secrets.SFTP_PRIVATE_KEY }}
+            server: ${{ env.SERVER_URL }}
+            port: ${{ env.FTP_PORT }}
+            local_path: './*'
+            remote_path: ${{ env.REMOTE_PATH }}
+            sftp_only: true
+            
